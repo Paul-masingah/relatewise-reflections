@@ -15,6 +15,8 @@ import NotFound from "./pages/NotFound";
 import HowItWorks from "./pages/HowItWorks";
 import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 
 // Create the query client
 const queryClient = new QueryClient();
@@ -35,6 +37,8 @@ const App: React.FC = () => {
               <Route path="/how-it-works" element={<HowItWorks />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

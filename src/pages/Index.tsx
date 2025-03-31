@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, Brain, MessageCircle, Shield } from "lucide-react";
+import { ArrowRight, Heart, Brain, MessageCircle, Shield, MapPin, Phone, Mail } from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -29,9 +28,20 @@ const Index = () => {
             </div>
             <span className="font-bold text-xl text-relationship-dark">Relatewise</span>
           </div>
-          <Button variant="ghost" className="hover:bg-relationship-light/10" onClick={() => navigate('/dashboard')}>
-            Dashboard
-          </Button>
+          <div className="hidden md:flex items-center space-x-2">
+            <Button variant="ghost" className="hover:bg-relationship-light/10" onClick={() => navigate('/services')}>
+              Services
+            </Button>
+            <Button variant="ghost" className="hover:bg-relationship-light/10" onClick={() => navigate('/how-it-works')}>
+              How It Works
+            </Button>
+            <Button variant="ghost" className="hover:bg-relationship-light/10" onClick={() => navigate('/contact')}>
+              Contact
+            </Button>
+            <Button variant="ghost" className="hover:bg-relationship-light/10" onClick={() => navigate('/dashboard')}>
+              Dashboard
+            </Button>
+          </div>
         </div>
       </header>
       
@@ -62,9 +72,9 @@ const Index = () => {
                 size="lg" 
                 variant="outline"
                 className="border-relationship-main text-relationship-main hover:bg-relationship-light/10"
-                onClick={() => navigate('/how-it-works')}
+                onClick={() => navigate('/services')}
               >
-                How It Works
+                Our Services
               </Button>
             </div>
           </div>
@@ -132,6 +142,52 @@ const Index = () => {
             <p className="text-gray-600 mt-2">Your relationship data stays private and secure</p>
           </div>
         </div>
+        
+        {/* Contact section - New */}
+        <div className={`mt-20 ${loaded ? 'animate-fade-in animation-delay-700' : 'opacity-0'}`}>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-relationship-dark mb-3">Get in Touch</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Have questions or want to learn more about Relatewise? Reach out to our team.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] border border-gray-100 text-center">
+              <div className="w-12 h-12 rounded-full bg-relationship-light/30 flex items-center justify-center mb-4 mx-auto">
+                <MapPin className="h-6 w-6 text-relationship-main" />
+              </div>
+              <h3 className="text-lg font-semibold text-relationship-dark">Visit Us</h3>
+              <p className="text-gray-600 mt-2">123 Relationship Avenue<br />San Francisco, CA 94103</p>
+            </div>
+            
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] border border-gray-100 text-center">
+              <div className="w-12 h-12 rounded-full bg-relationship-light/30 flex items-center justify-center mb-4 mx-auto">
+                <Phone className="h-6 w-6 text-relationship-main" />
+              </div>
+              <h3 className="text-lg font-semibold text-relationship-dark">Call Us</h3>
+              <p className="text-gray-600 mt-2">+1 (555) 123-4567</p>
+            </div>
+            
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] border border-gray-100 text-center">
+              <div className="w-12 h-12 rounded-full bg-relationship-light/30 flex items-center justify-center mb-4 mx-auto">
+                <Mail className="h-6 w-6 text-relationship-main" />
+              </div>
+              <h3 className="text-lg font-semibold text-relationship-dark">Email Us</h3>
+              <p className="text-gray-600 mt-2">hello@relatewise.com</p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Button 
+              onClick={() => navigate('/contact')}
+              className="bg-relationship-main hover:bg-relationship-dark text-white group transition-all duration-300"
+            >
+              Contact Us
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
+        </div>
       </main>
       
       <footer className="container mx-auto px-4 py-8 border-t border-gray-200">
@@ -141,6 +197,33 @@ const Index = () => {
               <Heart className="h-4 w-4 text-white" />
             </div>
             <span className="font-medium text-relationship-dark">Relatewise</span>
+          </div>
+          
+          <div className="flex gap-4 mb-4 md:mb-0">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className="text-gray-600 hover:text-relationship-main"
+              onClick={() => navigate('/services')}
+            >
+              Services
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className="text-gray-600 hover:text-relationship-main"
+              onClick={() => navigate('/how-it-works')}
+            >
+              How It Works
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className="text-gray-600 hover:text-relationship-main"
+              onClick={() => navigate('/contact')}
+            >
+              Contact
+            </Button>
           </div>
           
           <div className="text-sm text-gray-500">
